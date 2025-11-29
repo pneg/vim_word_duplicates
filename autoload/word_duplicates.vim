@@ -9,7 +9,6 @@ function! word_duplicates#check_under_cursor()
   let l:wordUnderCursor = expand("<cword>")
   let l:buf = bufnr('%')
   let l:wordPattern = '\V\<' . escape(l:wordUnderCursor, '\') . '\>'
-  echo l:wordPattern
   let l:wordMatches = matchbufline(l:buf, l:wordPattern, 1, '$')
 
   if len(l:wordMatches) > 1
